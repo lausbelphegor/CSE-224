@@ -1,0 +1,88 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml priority_encoder.twx priority_encoder.ncd -o
+priority_encoder.twr priority_encoder.pcf -ucf PriorityEncoder.ucf
+
+Design file:              priority_encoder.ncd
+Physical constraint file: priority_encoder.pcf
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+encoder_in<0>  |encoder_out<0> |    5.707|
+encoder_in<1>  |encoder_out<0> |    5.456|
+encoder_in<1>  |encoder_out<1> |    5.297|
+encoder_in<2>  |encoder_out<0> |    5.706|
+encoder_in<2>  |encoder_out<1> |    5.561|
+encoder_in<2>  |encoder_out<2> |    5.378|
+encoder_in<3>  |encoder_out<0> |    5.428|
+encoder_in<3>  |encoder_out<1> |    5.275|
+encoder_in<3>  |encoder_out<2> |    5.494|
+encoder_in<3>  |encoder_out<3> |    5.575|
+encoder_in<4>  |encoder_out<0> |    6.027|
+encoder_in<4>  |encoder_out<1> |    5.866|
+encoder_in<4>  |encoder_out<2> |    5.028|
+encoder_in<4>  |encoder_out<3> |    5.715|
+encoder_in<4>  |encoder_out<4> |    5.610|
+encoder_in<5>  |encoder_out<0> |    5.713|
+encoder_in<5>  |encoder_out<1> |    5.552|
+encoder_in<5>  |encoder_out<2> |    5.180|
+encoder_in<5>  |encoder_out<3> |    5.409|
+encoder_in<5>  |encoder_out<4> |    5.236|
+encoder_in<5>  |encoder_out<5> |    5.032|
+encoder_in<6>  |encoder_out<0> |    5.856|
+encoder_in<6>  |encoder_out<1> |    5.695|
+encoder_in<6>  |encoder_out<2> |    5.291|
+encoder_in<6>  |encoder_out<3> |    5.558|
+encoder_in<6>  |encoder_out<4> |    5.520|
+encoder_in<6>  |encoder_out<5> |    5.310|
+encoder_in<6>  |encoder_out<6> |    5.505|
+encoder_in<7>  |encoder_out<0> |    6.352|
+encoder_in<7>  |encoder_out<1> |    6.191|
+encoder_in<7>  |encoder_out<2> |    5.793|
+encoder_in<7>  |encoder_out<3> |    6.044|
+encoder_in<7>  |encoder_out<4> |    5.815|
+encoder_in<7>  |encoder_out<5> |    5.615|
+encoder_in<7>  |encoder_out<6> |    5.350|
+encoder_in<7>  |encoder_out<7> |    4.479|
+---------------+---------------+---------+
+
+
+Analysis completed Tue Mar 08 15:13:39 2022 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 409 MB
+
+
+

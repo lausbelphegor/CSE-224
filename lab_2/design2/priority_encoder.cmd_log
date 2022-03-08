@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "C:/Users/user/Desktop/lab_2/design2/priority_encoder.xst" -ofn "C:/Users/user/Desktop/lab_2/design2/priority_encoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 priority_encoder.ngc priority_encoder.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o priority_encoder_map.ncd priority_encoder.ngd priority_encoder.pcf 
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o priority_encoder_map.ncd priority_encoder.ngd priority_encoder.pcf 
+xst -intstyle ise -ifn "C:/Users/user/Desktop/lab_2/design2/priority_encoder.xst" -ofn "C:/Users/user/Desktop/lab_2/design2/priority_encoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 priority_encoder.ngc priority_encoder.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o priority_encoder_map.ncd priority_encoder.ngd priority_encoder.pcf 

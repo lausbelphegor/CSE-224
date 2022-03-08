@@ -1,0 +1,8 @@
+xst -intstyle ise -ifn "C:/Users/user/Desktop/lab_2/sevenseg/priority_encoder.xst" -ofn "C:/Users/user/Desktop/lab_2/sevenseg/priority_encoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc PriorityEncoder.ucf -p xc7a100t-csg324-3 priority_encoder.ngc priority_encoder.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o priority_encoder_map.ncd priority_encoder.ngd priority_encoder.pcf 
+xst -intstyle ise -ifn "C:/Users/user/Desktop/lab_2/sevenseg/priority_encoder.xst" -ofn "C:/Users/user/Desktop/lab_2/sevenseg/priority_encoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc PriorityEncoder.ucf -p xc7a100t-csg324-3 priority_encoder.ngc priority_encoder.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o priority_encoder_map.ncd priority_encoder.ngd priority_encoder.pcf 
+par -w -intstyle ise -ol high -mt off priority_encoder_map.ncd priority_encoder.ncd priority_encoder.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml priority_encoder.twx priority_encoder.ncd -o priority_encoder.twr priority_encoder.pcf -ucf PriorityEncoder.ucf 
