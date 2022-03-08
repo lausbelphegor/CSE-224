@@ -13,29 +13,29 @@ module SevenSegmentDisplayCSE(switch, sseg, anode);
 			
 			4'b1xxx :	begin
 							
-							sseg = 8'b10011100;
-							anode = 4'b1000;
+							sseg = 8'b01001110;
+							anode = 4'b0111;
 							
 							end
 			
 			4'b01xx :	begin
 							
-							sseg = 8'b10110110;
-							anode = 4'b0100;
+							sseg = 8'b01011011;
+							anode = 4'b0011;
 							
 							end
 							
 			4'b001x :	begin
 							
-							sseg = 8'b10011110;
-							anode = 4'b0010;
+							sseg = 8'b01001111;
+							anode = 4'b0001;
 							
 							end
 			
 			4'b0001 :	begin
 							
-							sseg = 8'b00000010;
-							anode = 4'b0001;
+							sseg = 8'b00000001;
+							anode = 4'b0000;
 							
 							end		
 		
