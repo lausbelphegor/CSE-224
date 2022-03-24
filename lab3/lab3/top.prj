@@ -1,0 +1,5 @@
+verilog work "up_down_counter.v"
+verilog work "ssd_decoder_unit.v"
+verilog work "slowdown_unit.v"
+verilog work "scan_unit.v"
+verilog work "top.v"

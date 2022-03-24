@@ -1,0 +1,18 @@
+NET "clk" LOC = "B8"; 
+
+NET "sseg<7>" LOC = "L14"; # Bank = 1, Signal name = CA
+NET "sseg<6>" LOC = "H12"; # Bank = 1, Signal name = CB
+NET "sseg<5>" LOC = "N14"; # Bank = 1, Signal name = CC
+NET "sseg<4>" LOC = "N11"; # Bank = 2, Signal name = CD
+NET "sseg<3>" LOC = "P12"; # Bank = 2, Signal name = CE
+NET "sseg<2>" LOC = "L13"; # Bank = 1, Signal name = CF
+NET "sseg<1>" LOC = "M12"; # Bank = 1, Signal name = CG
+NET "sseg<0>" LOC = "N13"; # Bank = 1, Signal name = DP
+
+NET "anode<3>" LOC = "K14"; # Bank = 1, Signal name = AN3
+NET "anode<2>" LOC = "M13"; # Bank = 1, Signal name = AN2
+NET "anode<1>" LOC = "J12"; # Bank = 1, Signal name = AN1
+NET "anode<0>" LOC = "F12"; # Bank = 1, Signal name = AN0
+
+NET "up_down" LOC = "P11";  # Bank = 2, Signal name = SW0
+NET "rst" LOC = "L3";  # Bank = 2, Signal name = SW0
