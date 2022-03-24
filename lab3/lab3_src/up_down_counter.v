@@ -8,18 +8,21 @@ module up_down_counter(clk, rst, enable, up_down, digit_1, digit_2, digit_3, dig
 	reg [3:0] digit_1_next, digit_2_next, digit_3_next, digit_4_next;
 	
 	always@(posedge clk)begin
+
 		if(rst == 1'b1)begin
 			digit_1 <= 4'b0000;
 			digit_2 <= 4'b0000;
 			digit_3 <= 4'b0000;
 			digit_4 <= 4'b0000;
 		end
+
 		else begin
 			digit_1 <= digit_1_next;
-			digit_2 <= digit_1_next;
-			digit_3 <= digit_1_next;
-			digit_4 <= digit_1_next;
+			digit_2 <= digit_2_next;
+			digit_3 <= digit_3_next;
+			digit_4 <= digit_4_next;
 		end
+
 	end
 	
 	always@(*)begin
