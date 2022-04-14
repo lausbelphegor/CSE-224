@@ -1,0 +1,5 @@
+MO topDesign2 NULL topDesign2.v vlg3F/top_design2.bin 1649939080
+MO character_rom NULL ipcore_dir/character_rom.v vlg02/character__rom.bin 1649938960
+MO slowdown_unit NULL slowdown_unit.v vlg34/slowdown__unit.bin 1649939080
+MO top NULL topDesign1.v vlg6F/top.bin 1649938960
+MO character_ram NULL ipcore_dir/character_ram.v vlg3C/character__ram.bin 1649939080

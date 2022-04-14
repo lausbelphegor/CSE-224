@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/Xilinx/14.7/ISE_DS/lab4/topDesign2.xst" -ofn "C:/Xilinx/14.7/ISE_DS/lab4/topDesign2.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc top.ucf -p xc3s100e-cp132-5 topDesign2.ngc topDesign2.ngd  
+map -intstyle ise -p xc3s100e-cp132-5 -cm area -ir off -pr off -c 100 -o topDesign2_map.ncd topDesign2.ngd topDesign2.pcf 
+par -w -intstyle ise -ol high -t 1 topDesign2_map.ncd topDesign2.ncd topDesign2.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml topDesign2.twx topDesign2.ncd -o topDesign2.twr topDesign2.pcf -ucf top.ucf 
+bitgen -intstyle ise -f topDesign2.ut topDesign2.ncd 

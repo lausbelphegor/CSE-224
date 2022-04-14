@@ -1,0 +1,3 @@
+verilog work "slowdown_unit.v"
+verilog work "ipcore_dir/character_ram.v"
+verilog work "topDesign2.v"

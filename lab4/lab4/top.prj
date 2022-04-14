@@ -1,0 +1,2 @@
+verilog work "ipcore_dir/character_rom.v"
+verilog work "topDesign1.v"
