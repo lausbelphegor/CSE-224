@@ -17,7 +17,7 @@ reg [3:0] state_current, state_next;
 always@(posedge clk) begin
 	if(rst) begin
 		state_current <= 0;
-	end
+		end
 	else begin
 		state_current <= state_next;
 	end
