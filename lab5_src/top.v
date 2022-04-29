@@ -111,7 +111,7 @@ always@(*) begin
               end
 
             1:begin
-                addr_2_next = ((addr_2_current + 1) % 14) + 10;
+                addr_2_next = (addr_2_current == 32) ? 29 : addr_2_current + 1;
                 addr_2 = addr_2_next;
                 if (enable == 1 && btn == 1) begin
                   state_next = 2;
