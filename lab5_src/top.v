@@ -19,7 +19,7 @@ always@(posedge clk) begin
     if(rst) begin
         state_current <= 0;
         addr_1_current <= 0;
-        addr_2_current <= 0;
+        addr_2_current <= 10;
         addr_3_current <= 0;
     end
     else begin
@@ -33,6 +33,8 @@ end
 always@(*) begin
     state_next = state_current;
     addr_1_next = addr_1_current;
+    addr_2_next = addr_2_current;
+    addr_3_next = addr_3_current;
     
     if (mode == 1) begin
       case(state_current)
@@ -109,11 +111,23 @@ always@(*) begin
               end
 
             1:begin
-                addr_2_next = (addr_2_current + 1) % 10;
-                addr_2 = addr_1_next;
+                addr_2_next = ((addr_2_current + 1) % 14) + 10;
+                addr_2 = addr_2_next;
                 if (btn == 1) begin
                   state_next = 2;
                 end               
+              end
+            
+            2:begin
+                addr_3_next = (addr_3_current + 1) % 10;
+                addr_3 = addr_3_next;
+                if (btn == 1) begin
+                  state_next = 3;
+                end               
+              end
+
+            3:begin
+                  
               end
 
           endcase
