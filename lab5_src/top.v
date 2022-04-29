@@ -7,7 +7,7 @@ output [7:0] sseg;
 output [3:0] anode;
 
 wire enable;
-reg [4:0] addr_1,addr_2,addr_3,addr_4;
+reg [6:0] addr_1,addr_2,addr_3,addr_4;
 wire [7:0] sseg_4,sseg_3,sseg_2,sseg_1;
 
 reg [3:0] state_current, state_next;
@@ -105,7 +105,7 @@ always@(*) begin
             0:begin
                 addr_1_next = (addr_1_current + 1) % 10;
                 addr_1 = addr_1_next;
-                if (btn == 1) begin
+                if (enable == 1 && btn == 1) begin
                   state_next = 1;
                 end               
               end
@@ -113,7 +113,7 @@ always@(*) begin
             1:begin
                 addr_2_next = ((addr_2_current + 1) % 14) + 10;
                 addr_2 = addr_2_next;
-                if (btn == 1) begin
+                if (enable == 1 && btn == 1) begin
                   state_next = 2;
                 end               
               end
@@ -121,13 +121,13 @@ always@(*) begin
             2:begin
                 addr_3_next = (addr_3_current + 1) % 10;
                 addr_3 = addr_3_next;
-                if (btn == 1) begin
+                if (enable == 1 && btn == 1) begin
                   state_next = 3;
                 end               
               end
 
             3:begin
-                  
+                
               end
 
           endcase
