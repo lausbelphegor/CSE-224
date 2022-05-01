@@ -11,7 +11,7 @@ reg [6:0] addr_1,addr_2,addr_3,addr_4;
 wire [7:0] sseg_4,sseg_3,sseg_2,sseg_1;
 
 reg [3:0] state_current, state_next;
-reg [4:0] addr_1_current, addr_1_next, addr_2_current, addr_2_next, addr_3_current, addr_3_next;
+reg [4:0] addr_1_current, addr_1_next, addr_2_current, addr_2_next, addr_3_current, addr_3_next, addr_4_current, addr_4_next;
 
 
 
@@ -21,12 +21,14 @@ always@(posedge clk) begin
         addr_1_current <= 0;
         addr_2_current <= 10;
         addr_3_current <= 0;
+        addr_4_current <= 0;
     end
     else begin
         state_current <= state_next;
         addr_1_current <= addr_1_next;
         addr_2_current <= addr_2_next;
         addr_3_current <= addr_3_next;
+        addr_4_current <= addr_4_next;
     end
 end
 
@@ -35,6 +37,7 @@ always@(*) begin
     addr_1_next = addr_1_current;
     addr_2_next = addr_2_current;
     addr_3_next = addr_3_current;
+    addr_4_next = addr_4_current;
     
     if (mode == 1) begin
       case(state_current)
@@ -111,7 +114,7 @@ always@(*) begin
               end
 
             1:begin
-                addr_2_next = (addr_2_current == 33) ? 30 : addr_2_current + 1;
+                addr_2_next = (addr_2_current == 34) ? 30 : addr_2_current + 1;
                 addr_2 = addr_2_next;
                 if (enable == 1 && btn == 1) begin
                   state_next = 2;
@@ -127,7 +130,18 @@ always@(*) begin
               end
 
             3:begin
-                
+                if (addr_2 == 30) begin
+                  addr_4 = addr_1 + addr_3;
+                end else if (addr_2 == 31) begin
+                  addr_4 = addr_1 - addr_3;
+                end else if (addr_2 == 32) begin
+                  addr_4 = addr_1 * addr_3;
+                end else if (addr_2 == 33) begin
+                  addr_4 = addr_1 / addr_3;
+                end
+                addr_1_next = 34;
+                addr_2_next = addr_4 / 10;
+                addr_3_next = addr_4 % 10;
               end
 
           endcase
