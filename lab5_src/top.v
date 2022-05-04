@@ -1,17 +1,17 @@
 `timescale 1ns / 1ps
 
-module top(clk, rst, direction, sseg, anode, mode, btn);
+module top(clk, rst, direction, sseg, anode, mode, btn, btn_enable);
 
 input clk, rst, direction, mode, btn;
 output [7:0] sseg;
 output [3:0] anode;
 
-wire enable;
+wire enable, btn_enable;
 reg [6:0] addr_1,addr_2,addr_3,addr_4;
 wire [7:0] sseg_4,sseg_3,sseg_2,sseg_1;
 
 reg [3:0] state_current, state_next;
-reg [4:0] addr_1_current, addr_1_next, addr_2_current, addr_2_next, addr_3_current, addr_3_next, addr_4_current, addr_4_next;
+reg [6:0] addr_1_current, addr_1_next, addr_2_current, addr_2_next, addr_3_current, addr_3_next, addr_4_current, addr_4_next;
 
 
 
@@ -108,7 +108,7 @@ always@(*) begin
             0:begin
                 addr_1_next = (addr_1_current + 1) % 10;
                 addr_1 = addr_1_next;
-                if (enable == 1 && btn == 1) begin
+                if (btn_enable == 1) begin
                   state_next = 1;
                 end               
               end
@@ -116,7 +116,7 @@ always@(*) begin
             1:begin
                 addr_2_next = (addr_2_current == 34) ? 30 : addr_2_current + 1;
                 addr_2 = addr_2_next;
-                if (enable == 1 && btn == 1) begin
+                if (btn_enable == 1) begin
                   state_next = 2;
                 end               
               end
@@ -124,7 +124,7 @@ always@(*) begin
             2:begin
                 addr_3_next = (addr_3_current + 1) % 10;
                 addr_3 = addr_3_next;
-                if (enable == 1 && btn == 1) begin
+                if (btn_enable == 1) begin
                   state_next = 3;
                 end               
               end
@@ -148,6 +148,8 @@ always@(*) begin
     end
     
 end
+
+
 
 slowdown_unit inst_1(.clk(clk), .rst(rst), .enable(enable));
 
@@ -176,5 +178,11 @@ character_rom inst_5(
 );
 
 scan_unit inst_6(.clk_s(clk), .rst_s(rst), .sseg_s({sseg_1,sseg_2,sseg_3,sseg_4}), .anode_s(anode), .sout_s(sseg));
+
+debounce_unit inst_7(
+  .SLOWCLOCK(enable),
+  .PUSHBUTTON(btn),
+  .SINGLEPULSEOUTPUT(btn_enable)
+  );
 
 endmodule

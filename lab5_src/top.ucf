@@ -15,8 +15,6 @@ NET "anode<1>" LOC = "J12"; # Bank = 1, Signal name = AN1
 NET "anode<0>" LOC = "F12"; # Bank = 1, Signal name = AN0
 
 NET "direction" LOC = "P11";  # Bank = 2, Signal name = SW0
-NET "mode" LOC = "P11";  # Bank = 2, Signal name = SW1
-NET "select_1" LOC = "P11";  # Bank = 2, Signal name = SW2
-NET "select_2" LOC = "P11";  # Bank = 2, Signal name = SW2
-NET "select_3" LOC = "P11";  # Bank = 2, Signal name = SW2
-NET "rst" LOC = "L3";  # Bank = 2, Signal name = SW0
+NET "mode" LOC = "L3";  # Bank = 2, Signal name = SW1
+NET "rst" LOC = "K3";  # Bank = 2, Signal name = SW2
+NET "btn" LOC = "C11";  # Bank = 2, Signal name = BTN1
