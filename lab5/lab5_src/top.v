@@ -144,6 +144,10 @@ always@(*) begin
                 addr_3_next = addr_4 % 10;
               end
 
+              default: begin
+                state_next = 0;
+              end
+
           endcase
     end
     
