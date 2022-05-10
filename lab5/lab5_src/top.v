@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module top(clk, rst, direction, sseg, anode, mode, btn, btn_enable);
+module top(clk, rst, direction, sseg, anode, mode, btn);
 
 input clk, rst, direction, mode, btn;
 output [7:0] sseg;
