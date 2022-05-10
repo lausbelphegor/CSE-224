@@ -7,7 +7,7 @@ output [7:0] sseg;
 output [3:0] anode;
 
 wire enable, btn_enable;
-reg [6:0] addr_1,addr_2,addr_3,addr_4;
+reg [4:0] addr_1,addr_2,addr_3,addr_4;
 wire [7:0] sseg_4,sseg_3,sseg_2,sseg_1;
 
 reg [3:0] state_current, state_next;
