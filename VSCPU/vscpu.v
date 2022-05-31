@@ -1,5 +1,28 @@
-// Code your design here
+module blram(clk, rst, i_we, i_addr, i_ram_data_in, o_ram_data_out);
+
+parameter SIZE = 14, DEPTH = 2**14;
+
+input clk;
+input rst;
+input i_we;
+input [SIZE-1:0] i_addr;
+input [31:0] i_ram_data_in;
+output reg [31:0] o_ram_data_out;
+
+reg [31:0] memory[0:DEPTH-1];
+
+always @(posedge clk) begin
+  o_ram_data_out <= #1 memory[i_addr[SIZE-1:0]];
+  if (i_we)
+		memory[i_addr[SIZE-1:0]] <= #1 i_ram_data_in;
+end 
+
+endmodule
+
 module VerySimpleCPU(clk, rst, data_fromRAM, wrEn, addr_toRAM, data_toRAM);
+  
+  
+  
   input clk, rst;
   output reg wrEn;
   input [31:0] data_fromRAM;
@@ -83,25 +106,4 @@ module VerySimpleCPU(clk, rst, data_fromRAM, wrEn, addr_toRAM, data_toRAM);
     
   end
   
-endmodule
-
-module blram(clk, rst, i_we, i_addr, i_ram_data_in, o_ram_data_out);
-
-parameter SIZE = 14, DEPTH = 2**14;
-
-input clk;
-input rst;
-input i_we;
-input [SIZE-1:0] i_addr;
-input [31:0] i_ram_data_in;
-output reg [31:0] o_ram_data_out;
-
-reg [31:0] memory[0:DEPTH-1];
-
-always @(posedge clk) begin
-  o_ram_data_out <= #1 memory[i_addr[SIZE-1:0]];
-  if (i_we)
-		memory[i_addr[SIZE-1:0]] <= #1 i_ram_data_in;
-end 
-
 endmodule
